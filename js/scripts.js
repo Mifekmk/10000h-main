@@ -12,6 +12,10 @@ const fieldResult = document.querySelector('.field_result');
 const timeValue = document.querySelector('#time_value');
 const timeResult = document.querySelector('.time_result');
 
+const Year = document.querySelector('.year_result');
+const Month = document.querySelector('.month_result');
+
+
 
 function after_click(){
     
@@ -24,6 +28,17 @@ function after_click(){
     const dayValue = parseInt( (10000 / timeValue.value) );
     
     timeResult.innerText = dayValue;
+    
+    const yearValue = parseInt( (dayValue / 365) );
+    
+    Year.innerText = yearValue;
+    
+          
+    const monthValue = parseInt( (dayValue / 30.5) - (yearValue * 12) );
+        
+    Month.innerText = monthValue;
+    
+    
 
 }
 
